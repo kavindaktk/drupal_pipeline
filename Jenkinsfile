@@ -24,8 +24,8 @@ pipeline {
       stage ('Deploy')  {    
           agent any 
         steps {     
-          
-             ansiblePlaybook disableHostKeyChecking: true, extras: '--extra-vars \\"image_id=' + ${env.BUILD_ID} + '\\',installation: 'ansible2', inventory: 'prod.inv', playbook: 'k8_deploy.yaml'
+            def tag = '--extra-vars \\"image_id=' + ${env.BUILD_ID} + '"\\'
+             ansiblePlaybook disableHostKeyChecking: true, extras: tag,installation: 'ansible2', inventory: 'prod.inv', playbook: 'k8_deploy.yaml'
                 }      
         }
         
