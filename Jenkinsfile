@@ -13,9 +13,9 @@ pipeline {
             }
         }
         
-      
+      agent any 
        stage('Publish') {
-           agent any  
+            
            steps {
    
               script { 
