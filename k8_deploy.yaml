@@ -1,8 +1,14 @@
 - name: deploye in EKS
   hosts:  production
+  vars:
+    image_version:  nginx
   tasks:
+  - name: create deploy yaml template
+    template:
+      src:  deployment.yaml
+      dest: ./deployment_ready.yaml
   - name: Deploy the service
     k8s:
       state: present
-      src:  deployment.yaml
+      src:  deployment_ready.yaml
       namespace:  default
