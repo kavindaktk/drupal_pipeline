@@ -2,7 +2,7 @@
   hosts:  localhost
   become: true
   become_user:  ansible_user
-  become_method:  su
+  become_method:  dzdo
   vars:
     image_version:  "{{ image_id }}"
   tasks:
