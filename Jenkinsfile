@@ -30,12 +30,6 @@ pipeline {
       stage ('Deploy')  {           
         steps {     
              ansiblePlaybook disableHostKeyChecking: true, installation: 'ansible2', inventory: 'prod.inv', playbook: 'k8_deploy.yaml'
-                // script{ 
-                    //def image_id = registry + ":$BUILD_NUMBER"
-                    //sh "ansible-playbook  k8_deploy.yaml --extra-vars \"image_id=${image_id}\""
-                   // ansiblePlaybook disableHostKeyChecking: true, installation: 'ansible2', inventory: 'prod.inv', playbook: 'k8_deploy.yaml'
-                  //  }   
-            
                 }      
         }
         
