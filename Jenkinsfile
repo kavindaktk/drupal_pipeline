@@ -6,9 +6,9 @@ pipeline {
     stages {
     
         stage('Building image') {
-      
+            agent any   
             steps{
-        
+                    
                 script {
                     def appimage = docker.build("drupal:${env.BUILD_ID}")
                     //docker.build registry + "/drupal:$BUILD_NUMBER"
