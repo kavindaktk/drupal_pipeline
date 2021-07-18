@@ -29,7 +29,7 @@ pipeline {
                 //def image = "--extra-vars \\"image_id=' + ${env.BUILD_ID} + '\\"
                 def image = "--extra-vars image_id=${env.BUILD_ID}"
                 //println "TEST ${image}"
-                ansiblePlaybook  extras: "${image}",installation: 'ansible2', playbook: 'k8_deploy.yaml', sudo: true
+                ansiblePlaybook  extras: "${image}",installation: 'ansible2', playbook: 'k8_deploy.yaml'
             }
                 }      
         }
