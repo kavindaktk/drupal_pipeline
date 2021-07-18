@@ -26,8 +26,8 @@ pipeline {
           
         steps {     
             script { 
-                def image = '--extra-vars \\"image_id=' + ${env.BUILD_ID} + '\\'
-                println "TEST ${image}"
+                //def image = "--extra-vars \\"image_id=' + ${env.BUILD_ID} + '\\"
+                //println "TEST ${image}"
                 ansiblePlaybook  extras: '--extra-vars \\"image_id=${env.BUILD_ID}\\',installation: 'ansible2', playbook: 'k8_deploy.yaml'
             }
                 }      
