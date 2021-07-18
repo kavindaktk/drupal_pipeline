@@ -1,7 +1,7 @@
 - name: deploye in EKS
   hosts:  localhost
   become: true
-  become_user:  root
+  become_user:  jenkins
   vars:
     image_version:  "{{ image_id }}"
   tasks:
