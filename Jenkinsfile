@@ -1,6 +1,6 @@
 pipeline {
     agent any 
-    environment {       registry = "localhost:5000"}  
+    environment {       registry = "localhost:5000" image = ""}  
   
     
     stages {
@@ -26,7 +26,7 @@ pipeline {
           
         steps {     
            
-             ansiblePlaybook  extras: '--extra-vars \\"image_id=' + ${env.BUILD_ID} + '\\',installation: 'ansible2', playbook: 'k8_deploy.yaml'
+             ansiblePlaybook  extras: '--extra-vars \\"image_id=${env.BUILD_ID}\\',installation: 'ansible2', playbook: 'k8_deploy.yaml'
                 }      
         }
         
