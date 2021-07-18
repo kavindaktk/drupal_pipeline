@@ -1,5 +1,5 @@
 - name: deploye in EKS
-  hosts:  production
+  hosts:  localhost
   vars:
     image_version:  nginx
   tasks:
