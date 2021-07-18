@@ -25,7 +25,7 @@ pipeline {
           agent any 
         steps {     
            
-             ansiblePlaybook become: true, extras: '--extra-vars \\"image_id=${env.BUILD_ID}\\',installation: 'ansible2', inventory: 'prod.inv', playbook: 'k8_deploy.yaml', sudo: true
+             ansiblePlaybook  extras: '--extra-vars \\"image_id=${env.BUILD_ID}\\',installation: 'ansible2', playbook: 'k8_deploy.yaml'
                 }      
         }
         
