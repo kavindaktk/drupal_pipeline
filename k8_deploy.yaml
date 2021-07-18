@@ -1,5 +1,5 @@
 - name: deploye in EKS
-  hosts:  localhost
+  hosts:  prodction
   tasks:
   - name: Deploy the service
     k8s:
