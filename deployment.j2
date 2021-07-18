@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: {{ image_version }}
+        image: localhost:5000/drupal:{{ image_version }}
         ports:
         - containerPort: 80
