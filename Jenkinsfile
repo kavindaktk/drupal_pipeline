@@ -5,15 +5,16 @@ pipeline {
     }
     environment {       registry = "localhost:5000"}  
   
-  
+    agent any 
     stages {
+        
         stage('Test') {
             steps {
                 sh 'php --version'
             }
         }
         
-      agent any stage('Publish') {
+      stage('Publish') {
             
            steps {
    
