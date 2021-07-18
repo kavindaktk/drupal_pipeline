@@ -30,6 +30,8 @@
  ENV APACHE_LOG_DIR /var/log/apache2
  ENV APACHE_LOCK_DIR /var/lock/apache2
  #ENV APACHE_PID_FILE=/var/run/apache2.pid 
+ # copy source file 
+ COPY .* /var/www/html
 #runit service files
  COPY ./apache2-run.sh /etc/service/http/run
  #COPY apache2-run.sh /etc/service/http/run
