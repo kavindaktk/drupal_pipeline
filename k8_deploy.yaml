@@ -1,7 +1,5 @@
 - name: deploye in EKS
   hosts:  localhost
-  become: true
-  become_user:  ansible_user
   vars:
     image_version:  "{{ image_id }}"
   tasks:
