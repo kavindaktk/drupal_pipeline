@@ -1,6 +1,6 @@
 pipeline {
     agent any 
-    environment {       registry = "localhost:5000" image = ""}  
+    environment {       registry = "localhost:5000" def image = ""}  
   
     
     stages {
