@@ -8,7 +8,7 @@
       src:  deployment.j2
       dest: ./deployment_ready.yaml
   - name: Deploy the service
-    k8s:
+    community.kubernetes.k8s::
       state: present
       src:  deployment_ready.yaml
       namespace:  default
