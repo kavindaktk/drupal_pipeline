@@ -16,13 +16,9 @@ pipeline {
       
        stage('Publish') {
             steps {
-                script { 
-                    
-                    withDockerRegistry(toolName: 'docker2', url: 'http://localhost:5000') {
-                        def appimage = docker.build("drupal:${env.BUILD_ID}")
-                        appimage.push()   
-                    }
-                }
+                
+                sh 'docker --version'
+            
 
                 
                 
