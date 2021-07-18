@@ -16,13 +16,18 @@ pipeline {
       
        stage('Publish') {
             steps {
-              script { 
-                  def appimage = docker.build("drupal:${env.BUILD_ID}")
-                      docker.withRegistry( 'http://localhost:5000' ){                       
+                
+                 docker.withRegistry( 'http://localhost:5000' ){                       
                       appimage.push()                       
                       appimage.push('latest')                  
-                      }              
-                    }
+                      }   
+              //script { 
+              //    def appimage = docker.build("drupal:${env.BUILD_ID}")
+               //       docker.withRegistry( 'http://localhost:5000' ){                       
+              //        appimage.push()                       
+               //       appimage.push('latest')                  
+               //       }              
+                //    }
             }
         }
         
