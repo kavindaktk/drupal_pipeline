@@ -1,6 +1,5 @@
 - name: deploye in EKS
   hosts:  localhost
-  become_user:  ec2-user
   vars:
     image_version:  "{{ image_id }}"
   tasks:
