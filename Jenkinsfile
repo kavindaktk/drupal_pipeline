@@ -10,8 +10,8 @@ pipeline {
             steps{
         
                 script {
-          
-                    docker.build registry + "/drupal:$BUILD_NUMBER"
+                    def appimage = docker.build("drupal:${env.BUILD_ID}")
+                    //docker.build registry + "/drupal:$BUILD_NUMBER"
         
                 }
       
