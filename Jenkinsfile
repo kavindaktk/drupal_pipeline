@@ -13,8 +13,7 @@ pipeline {
             }
         }
         
-      agent any 
-       stage('Publish') {
+      agent any stage('Publish') {
             
            steps {
    
