@@ -5,7 +5,7 @@
   tasks:
   - name: create deploy yaml template
     template:
-      src:  deployment.yaml
+      src:  deployment.j2
       dest: ./deployment_ready.yaml
   - name: Deploy the service
     k8s:
