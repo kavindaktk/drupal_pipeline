@@ -5,12 +5,7 @@ pipeline {
     
     stages {
         
-        stage('Test') {
-            steps {
-                sh 'php --version'
-            }
-        }
-        
+
       stage('Publish') {
             
            steps {
