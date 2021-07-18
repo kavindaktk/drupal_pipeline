@@ -11,7 +11,7 @@ pipeline {
         
                 script {
           
-                    docker.build registry + ":drupal:$BUILD_NUMBER"
+                    docker.build registry + "/drupal:$BUILD_NUMBER"
         
                 }
       
