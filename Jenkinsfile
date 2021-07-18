@@ -23,10 +23,10 @@ pipeline {
         
       stage ('Deploy')  {    
           agent any 
-          def image_str = ""
+          
         steps {     
            
-             ansiblePlaybook  extras: '--extra-vars \\"image_id=${env.BUILD_ID}\\',installation: 'ansible2', playbook: 'k8_deploy.yaml'
+             ansiblePlaybook  extras: '--extra-vars \\"image_id= + ${env.BUILD_ID} + \\',installation: 'ansible2', playbook: 'k8_deploy.yaml'
                 }      
         }
         
