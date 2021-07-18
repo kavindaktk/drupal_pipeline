@@ -1,7 +1,7 @@
 - name: deploye in EKS
   hosts:  localhost
   vars:
-    image_version:  nginx
+    image_version:  {{ image_id }}
   tasks:
   - name: create deploy yaml template
     template:
