@@ -1,7 +1,7 @@
 pipeline {  
     
     environment { registry = "http://localhost:5000"}  
-    agent any  
+    agent { dockerfile true }  
     
     stages {
     
