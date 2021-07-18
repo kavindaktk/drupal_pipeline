@@ -17,7 +17,7 @@ pipeline {
        stage('Publish') {
             steps {
                 
-                sh 'docker --version'
+                sh '/usr/bin/docker --version'
             
 
                 
