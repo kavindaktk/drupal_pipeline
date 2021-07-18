@@ -18,6 +18,7 @@ pipeline {
             steps {
                 
                 // This step should not normally be used in your script. Consult the inline help for details.
+                def appimage = docker.build("drupal:${env.BUILD_ID}")
                 withDockerRegistry(toolName: 'docker2', url: 'http://localhost:5000') {
                     appimage.push()   
                 }
