@@ -1,11 +1,8 @@
 pipeline {
-    agent {
-        //docker { image 'localhost:5000/drupal' }
-        dockerfile true
-    }
+    agent any 
     environment {       registry = "localhost:5000"}  
   
-    agent any 
+    
     stages {
         
         stage('Test') {
