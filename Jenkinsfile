@@ -11,7 +11,7 @@ pipeline {
            steps {
    
               script { 
-                  def appimage = docker.build("drupal:${env.BUILD_ID}")
+                  def appimage = docker.build(registry + "drupal:${env.BUILD_ID}")
                        docker.withRegistry( 'https://625650193469.dkr.ecr.us-east-1.amazonaws.com' ){                       
                        appimage.push()                       
                        appimage.push('latest')                  
