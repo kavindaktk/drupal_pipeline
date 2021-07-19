@@ -40,7 +40,7 @@
  RUN rm /var/www/html/index.html
   
   # copy source file 
- COPY package/* /var/www/html/
+ COPY package/ /var/www/html/
  
 EXPOSE 80
  ## /apache2 
