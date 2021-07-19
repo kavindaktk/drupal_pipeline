@@ -47,3 +47,8 @@ EXPOSE 80
 #apt-cleanup
  RUN apt-get clean
  RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+ 
+ ENV STARTUP_SCRIPT=/usr/local/bin/start-up.sh
+ COPY ./apache2-run.sh $STARTUP_SCRIPT
+ RUN chmod +x $STARTUP_SCRIPT
+ ENTRYPOINT $STARTUP_SCRIPT
