@@ -1,6 +1,6 @@
 pipeline {
     agent any 
-    environment {       registry = "localhost:5000" }  
+    environment {       registry = "https://625650193469.dkr.ecr.us-east-1.amazonaws.com" }  
   
     
     stages {
@@ -12,7 +12,7 @@ pipeline {
    
               script { 
                   def appimage = docker.build("drupal:${env.BUILD_ID}")
-                       docker.withRegistry( 'http://localhost:5000' ){                       
+                       docker.withRegistry( 'https://625650193469.dkr.ecr.us-east-1.amazonaws.com' ){                       
                        appimage.push()                       
                        appimage.push('latest')                  
                       }              
