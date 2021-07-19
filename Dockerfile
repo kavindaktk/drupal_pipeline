@@ -30,13 +30,18 @@
  ENV APACHE_LOG_DIR /var/log/apache2
  ENV APACHE_LOCK_DIR /var/lock/apache2
  #ENV APACHE_PID_FILE=/var/run/apache2.pid 
- # copy source file 
- COPY package/* /var/www/html/
 #runit service files
  COPY ./apache2-run.sh /etc/service/http/run
  #COPY apache2-run.sh /etc/service/http/run
 #runit service permissions
  RUN chmod +x /etc/service/http/run
+ 
+ #delete default html
+ RUN rm /var/www/html/index.html
+  
+  # copy source file 
+ COPY package/* /var/www/html/
+ 
 EXPOSE 80
  ## /apache2 
 #apt-cleanup
