@@ -1,6 +1,6 @@
 pipeline {
     agent any 
-    environment {       registry = "https://625650193469.dkr.ecr.us-east-1.amazonaws.com" }  
+    environment {       registry = "625650193469.dkr.ecr.us-east-1.amazonaws.com" }  
   
     
     stages {
