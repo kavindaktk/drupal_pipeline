@@ -10,7 +10,7 @@ pipeline {
              echo 'Make the output directory'
              sh 'mkdir -p build'
                dir('build') {
-                  git branch: master,  url: https://github.com/kavindaktk/drupal_web.git
+                  git branch: "master",  url: "https://github.com/kavindaktk/drupal_web.git"
               } 
            }
        }
