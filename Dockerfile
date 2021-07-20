@@ -4,4 +4,4 @@
  MAINTAINER Kavinda Thisara <kavindatk@gmail.com>;
 
   # copy source file 
- COPY package/ /opt/drupal/
+ COPY build/ /opt/drupal/
