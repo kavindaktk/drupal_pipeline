@@ -5,7 +5,12 @@ pipeline {
     
     stages {
         
-
+       stage('Clone Repo') {
+           steps { 
+             echo 'Make the output directory'
+             sh 'mkdir -p build'
+           }
+       }
       stage('Publish') {
             
            steps {
@@ -26,7 +31,6 @@ pipeline {
           
         steps {     
             script { 
-                //def image = "--extra-vars \\"image_id=' + ${env.BUILD_ID} + '\\"
                 def image = "--extra-vars image_id=${env.BUILD_ID}"
                 //println "TEST ${image}"
                 ansiblePlaybook  extras: "${image} -vvvv",installation: 'ansible2', playbook: 'k8_deploy.yaml'
