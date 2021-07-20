@@ -5,7 +5,7 @@ pipeline {
     
     stages {
         
-       stage('Clone Repo') {
+       stage('Clone Source Repo') {
            steps { 
              echo 'Make the output directory'
              sh 'mkdir -p build'
