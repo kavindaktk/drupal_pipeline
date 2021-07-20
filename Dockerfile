@@ -4,7 +4,7 @@
  MAINTAINER Kavinda Thisara <kavindatk@gmail.com>;
 
   # copy source file 
- COPY package/ /opt/drupal
+ COPY package/ /opt/drupal/
  
 EXPOSE 80
 CMD apachectl -D FOREGROUND
