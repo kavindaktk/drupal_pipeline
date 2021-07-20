@@ -1,12 +1,27 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: drupal-service
+  labels:
+    app: drupal
+  name: drupal-ldb-service
+  namespace: default
+  resourceVersion: "3735"
+  uid: 257ebd8a-3e0f-4ae5-a1f3-4a408f0c2ba6
 spec:
-  type: NodePort
+  clusterIP: 172.20.160.32
+  clusterIPs:
+  - 172.20.160.32
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 32712
+    port: 80
+    protocol: TCP
+    targetPort: 80
   selector:
     app: drupal
-  ports:
-    - port: 80
-      targetPort: 80
-      nodePort: 30007
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - hostname: a257ebd8a3e0f4ae5a1f34a408f0c2ba-749560115.us-east-1.elb.amazonaws.com
