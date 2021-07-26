@@ -17,7 +17,10 @@ pipeline {
         stage('Auth') {
            steps { 
              echo 'authering'
-             sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin https://625650193469.dkr.ecr.us-east-1.amazonaws.com'  
+             sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin https://625650193469.dkr.ecr.us-east-1.amazonaws.com'
+             echo 'AWS config setting up'
+             sh 'cd /home/ec2-user/eks/terraform-eks/eks_cluster'
+             sh 'aws eks --region $(terraform output -raw region) update-kubeconfig --name $(terraform output -raw cluster_name)'
            }
        }
       stage('Publish') {
