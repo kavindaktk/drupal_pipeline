@@ -1,5 +1,6 @@
 - name: deploye in EKS
   hosts:  localhost
+  remote_user:  root
   vars:
     image_version:  "{{ image_id }}"
   tasks:
