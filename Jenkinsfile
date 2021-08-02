@@ -38,7 +38,7 @@ pipeline {
 
         
         
-        stage ('Deploy2')  {    
+        stage ('Deploy')  {    
           agent any 
           
         steps {     
