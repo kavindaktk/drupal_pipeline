@@ -34,7 +34,15 @@ pipeline {
             }
         }
         
-
+        
+        
+        stage('Deploy1') {
+           steps { 
+             echo 'Deploy2'
+             sh '/usr/local/bin/ansible-playbook k8_deploy.yaml --extra-vars image_id=246'
+           }
+       }
+        
         
         stage ('Deploy2')  {    
           agent any 
