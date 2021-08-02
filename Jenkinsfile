@@ -35,7 +35,20 @@ pipeline {
         }
         
         
-      stage ('Deploy')  {    
+      
+        
+      
+        
+         stage('Deploy') {
+           steps { 
+             echo 'authering'
+             sh 'ansible-playbook k8_deploy.yaml --extra-vars image_id=246'
+           }
+       }
+        
+        
+        
+        stage ('Deploy2')  {    
           agent any 
           
         steps {     
@@ -47,7 +60,8 @@ pipeline {
                 }      
         }
         
-      
+        
+        
       
     }
 }
